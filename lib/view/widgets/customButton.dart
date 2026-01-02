@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  void Function()? onTap;
+   CustomButton({super.key,this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.of(context).pop();
-      },
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         height: 60,
