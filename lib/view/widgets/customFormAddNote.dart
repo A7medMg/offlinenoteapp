@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/models/noteModel.dart';
 
-import '../../addNoteCubit/add_note_cubit.dart';
+import '../../cubits/addNoteCubit/add_note_cubit.dart';
+import 'ColorListViewBottomSheet.dart';
 import 'CustomTextFiled.dart';
 import 'customButton.dart';
 class AddNoteFormState extends StatefulWidget {
+
   const AddNoteFormState({super.key});
 
   @override
@@ -33,6 +35,8 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
           },),
           SizedBox(height: 30,),
 
+          ColorListView(),
+          SizedBox(height: 10,),
           CustomButton(onTap: (){
             if(formKey.currentState!.validate()){
               formKey.currentState!.save();
@@ -52,3 +56,5 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
     );
   }
 }
+
+

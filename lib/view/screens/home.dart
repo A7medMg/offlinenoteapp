@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/view/widgets/CustomBottomSheet.dart';
 import 'package:noteapp/view/widgets/notesBodyView.dart';
+
+import '../../cubits/notes/notes_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen ({super.key});
@@ -15,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         ),
         onPressed: (){
           showModalBottomSheet(
+            isScrollControlled: true,
             backgroundColor: Colors.grey.shade700,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
